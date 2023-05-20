@@ -1,15 +1,49 @@
 import CONFIG from "../../globals/config";
 
+
+const RestoDetailTemplate = (resto) => {
+    return `
+   <div>
+   <img class="resto__poster" src="${CONFIG.BASE_URL}images/medium/${resto.pictureId}" alt="${resto.name}" />
+   <h1 class="resto__title">${resto.name}</h1>
+  <div class="resto__info">
+    <div> <h4>Alamat</h4>
+    <p>${resto.address}</p>
+    </div>
+    
+    <div>
+    <h4>Kota</h4>
+    <p>${resto.city}</p>
+    </div>
+   
+    </div>
+    <p>${resto.description} minutes</p>
+  <div class="resto__overview">
+    <div class="food__menu">
+    <h3>Makanan</h3>
+    </div>
+    
+
+  
+    <div class="drink__menu">
+    <h3>Minuman</h3>
+    </div>
+  </div></div>
+`;
+}
+
+
+
 const RestoTemplate = (resto) => {
     return `  
-    <div class="card">
+    <div class="card" onclick="location.href='#/detail/${resto.id}';">
         <div class="head-card">
         <p class="body-city">
         ${resto.city}
         </p>
-        <img src="${CONFIG.BASE_URL}images/medium/${resto.pictureId}" alt="" />
+        <img src="${CONFIG.BASE_URL}images/medium/${resto.pictureId}" alt="${resto.name}" />
         <div class="body-rating">
-            <img src="./images/Rating.png" alt="Picture of ${resto.name}" />
+            <img src="./images/Rating.png" alt="Rating" />
             <p>
             ${resto.rating}
             </p>
@@ -24,4 +58,4 @@ const RestoTemplate = (resto) => {
     </div>`
 }
 
-export default RestoTemplate;
+export {RestoTemplate, RestoDetailTemplate};

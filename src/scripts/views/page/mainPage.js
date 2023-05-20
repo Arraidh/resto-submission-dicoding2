@@ -1,5 +1,5 @@
 import restoDBSource from "../../data/restodb-source";
-import RestoTemplate from "../templates/template-creator";
+import {RestoTemplate} from "../templates/template-creator";
 
 const Resto = {
     async render() {

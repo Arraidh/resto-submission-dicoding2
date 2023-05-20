@@ -291,3 +291,33 @@ footer {
     }
   }
 }
+
+#restoDetail{
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+#restoDetail li{
+  list-style-type: none;
+}
+
+#restoDetail div{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  width: 80%;
+}
+#restoDetail img{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50em;
+  align-self: center;
+}
+
+#restoDetail .resto__info{
+  display: flex;
+  justify-content: space-around;
+}
