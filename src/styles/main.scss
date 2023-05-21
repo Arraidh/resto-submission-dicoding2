@@ -292,32 +292,62 @@ footer {
   }
 }
 
-#restoDetail{
-display: flex;
-justify-content: center;
-align-items: center;
-}
-
-#restoDetail li{
-  list-style-type: none;
-}
-
-#restoDetail div{
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-  width: 80%;
-}
-#restoDetail img{
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50em;
-  align-self: center;
-}
-
-#restoDetail .resto__info{
+#restoDetail {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  align-items: center;
+  li {
+    list-style-type: none;
+  }
+
+  .resto__info2 .resto__address {
+    display: flex;
+    justify-content: space-around;
+  }
+  .resto__info2 {
+    background-color: #fff;
+    box-shadow: 0 0px 10px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+  }
+
+  .resto__info {
+    display: flex;
+    justify-content: space-around;
+    box-shadow: 0 0px 10px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+  }
+
+  div {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    margin: 2rem;
+    width: 90%;
+    border-radius: 2rem;
+  }
+
+  img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50em;
+    align-self: center;
+  }
+
+  .customer__review .ulasan__Item {
+    text-align: left;
+  }
+  .customer__review .ulasan__Item h5 {
+    margin-top: 0;
+    font-weight: 300;
+  }
+  .customer__review .ulasan__Item h3 {
+    margin-bottom: 0;
+  }
+
+  .ulasan__Item {
+    box-shadow: 0 0px 10px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+  }
 }

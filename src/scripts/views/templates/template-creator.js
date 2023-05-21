@@ -1,41 +1,44 @@
 import CONFIG from "../../globals/config";
 
-
 const RestoDetailTemplate = (resto) => {
-    return `
+  return `
    <div>
-   <img class="resto__poster" src="${CONFIG.BASE_URL}images/medium/${resto.pictureId}" alt="${resto.name}" />
-   <h1 class="resto__title">${resto.name}</h1>
-  <div class="resto__info">
-    <div> <h4>Alamat</h4>
-    <p>${resto.address}</p>
+    <img class="resto__poster" src="${CONFIG.BASE_URL}images/medium/${resto.pictureId}" alt="${resto.name}" />
+    <h1 class="resto__title">${resto.name}</h1>
+    <div class="resto__info2">
+      <div class="resto__address">
+        <div>
+          <h4>Alamat</h4>
+          <p>${resto.address}</p>
+        </div>
+        <div>
+          <h4>Kota</h4>
+          <p>${resto.city}</p>
+        </div>
+      </div>
+      <p class="resto__description">${resto.description} minutes</p>
     </div>
-    
-    <div>
-    <h4>Kota</h4>
-    <p>${resto.city}</p>
-    </div>
-   
-    </div>
-    <p>${resto.description} minutes</p>
-  <div class="resto__overview">
-    <div class="food__menu">
-    <h3>Makanan</h3>
-    </div>
-    
+    <div class="resto__info">
 
-  
-    <div class="drink__menu">
-    <h3>Minuman</h3>
+      <div class="food__menu">
+        <h3>Makanan</h3>
+      </div>
+
+      <div class="drink__menu">
+        <h3>Minuman</h3>
+      </div>
+      
     </div>
-  </div></div>
+    <div class="customer__review">
+      <h2>Ulasan</h2>
+      
+    </div>
+  </div>
 `;
-}
-
-
+};
 
 const RestoTemplate = (resto) => {
-    return `  
+  return `  
     <div class="card" onclick="location.href='#/detail/${resto.id}';">
         <div class="head-card">
         <p class="body-city">
@@ -55,7 +58,7 @@ const RestoTemplate = (resto) => {
             ${resto.description}
         </p>
         </div>
-    </div>`
-}
+    </div>`;
+};
 
-export {RestoTemplate, RestoDetailTemplate};
+export { RestoTemplate, RestoDetailTemplate };
