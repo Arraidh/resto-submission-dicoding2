@@ -31,6 +31,36 @@ const RestoDetailTemplate = (resto) => {
     </div>
     <div class="customer__review">
       <h2>Ulasan</h2>
+      <form id="reviewForm" method="POST" class="formbold-chatbox-form">
+        <input type="hidden" name="id" value="${resto.id}">
+        
+        <div class="formbold-mb-5">
+          <label for="name" class="formbold-form-label">Your Name</label>
+          <input
+            type="text"
+            name="name"
+            id="name"
+            placeholder="Your Name"
+            class="formbold-form-input"
+          />
+        </div>
+
+        <div class="formbold-mb-5">
+          <label for="review" class="formbold-form-label">Review</label>
+          <textarea
+            rows="6"
+            name="review"
+            id="review"
+            placeholder="Explain your queries"
+            class="formbold-form-input"
+          ></textarea>
+        </div>
+
+        <div>
+          <button class="formbold-btn w-full">Submit</button>
+        </div>
+      </form>
+
       
     </div>
   </div>

@@ -2,6 +2,7 @@ import restoDBSource from "../../data/restodb-source";
 import UrlParser from "../../routes/url-parser";
 import { RestoDetailTemplate } from "../templates/template-creator";
 import LikeButtonInitiator from "../../utils/like-button-initiator";
+import CONFIG from "../../globals/config";
 
 const Detail = {
   async render() {
@@ -52,6 +53,47 @@ const Detail = {
         pictureId: resto.restaurant.pictureId,
       },
     });
+
+    const review = () => {
+      document
+        .getElementById("reviewForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault(); // Prevent the default form submission
+
+          const id = resto.restaurant.id;
+          const name = document.querySelector('input[name="name"]').value;
+          const review = document.querySelector(
+            'textarea[name="review"]'
+          ).value;
+
+          const reviewData = JSON.stringify({ id, name, review });
+
+          // Send the POST request using fetch
+          fetch(`${CONFIG.BASE_URL}review`, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: reviewData,
+          })
+            .then((response) => {
+              if (!response.ok) {
+                throw new Error("Failed to submit the review.");
+              }
+              // Optional: Perform any additional logic or UI updates here
+              console.log("Review submitted successfully.");
+            })
+            .catch((error) => {
+              console.error(error);
+            });
+
+          setTimeout(function () {
+            location.reload();
+          }, 1000); // Delay in milliseconds (e.g., 1000ms = 1 second)
+        });
+    };
+
+    review();
   },
 };
 
