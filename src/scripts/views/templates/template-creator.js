@@ -61,7 +61,7 @@ const RestoDetailTemplate = (resto) => {
         </div>
       </form>
 
-      
+
     </div>
   </div>
 `;
