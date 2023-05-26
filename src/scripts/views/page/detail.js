@@ -7,7 +7,7 @@ import CONFIG from "../../globals/config";
 const Detail = {
   async render() {
     return `
-        <div id='restoDetail'></div>
+        <div id='restoDetail' class='main'></div>
         <div id="likeButtonContainer"></div>
         `;
   },
@@ -58,7 +58,7 @@ const Detail = {
       document
         .getElementById("reviewForm")
         .addEventListener("submit", function (event) {
-          event.preventDefault(); // Prevent the default form submission
+          event.preventDefault();
 
           const id = resto.restaurant.id;
           const name = document.querySelector('input[name="name"]').value;
@@ -68,7 +68,6 @@ const Detail = {
 
           const reviewData = JSON.stringify({ id, name, review });
 
-          // Send the POST request using fetch
           fetch(`${CONFIG.BASE_URL}review`, {
             method: "POST",
             headers: {
@@ -80,7 +79,6 @@ const Detail = {
               if (!response.ok) {
                 throw new Error("Failed to submit the review.");
               }
-              // Optional: Perform any additional logic or UI updates here
               console.log("Review submitted successfully.");
             })
             .catch((error) => {
@@ -89,7 +87,7 @@ const Detail = {
 
           setTimeout(function () {
             location.reload();
-          }, 1000); // Delay in milliseconds (e.g., 1000ms = 1 second)
+          }, 1000);
         });
     };
 

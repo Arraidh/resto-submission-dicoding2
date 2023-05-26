@@ -4,7 +4,7 @@ import { RestoTemplate } from "../templates/template-creator";
 const Like = {
   async render() {
     return `
-    <div class="content">
+    <div class="content main">
         <h2 class="content__heading">Your Liked Restaurants</h2>
         <div class="card-wrapper" id="card-wrapper"></div>
     </div>`;
@@ -15,7 +15,6 @@ const Like = {
     const restoContainer = document.querySelector("#card-wrapper");
 
     restos.forEach((resto) => {
-      console.log(resto);
       restoContainer.innerHTML += RestoTemplate(resto);
     });
   },

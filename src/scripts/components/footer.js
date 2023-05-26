@@ -4,7 +4,6 @@ class MyFooter extends HTMLElement {
 
     const shadowRoot = this.attachShadow({ mode: "open" });
 
-    // Styling for the custom footer
     const styles = `
         :host {
           margin-top: 2rem;
@@ -24,11 +23,9 @@ class MyFooter extends HTMLElement {
         }
       `;
 
-    // Create the footer element
     const footer = document.createElement("footer");
     footer.textContent = `Copyright © ${new Date().getFullYear()} - Warung Kita`;
 
-    // Attach the styles and the footer element to the shadow root
     shadowRoot.innerHTML = `<style>${styles}</style>`;
     shadowRoot.appendChild(footer);
   }

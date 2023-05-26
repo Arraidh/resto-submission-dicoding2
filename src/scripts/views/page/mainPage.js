@@ -10,7 +10,7 @@ const Resto = {
           alt="Welcome to Warung Kita Picture"
         />
       </div>
-      <div class="card-wrapper" id="card-wrapper"></div>
+      <div class="card-wrapper main" id="card-wrapper"></div>
         `;
   },
 

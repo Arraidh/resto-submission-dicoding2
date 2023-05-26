@@ -4,6 +4,7 @@ import Resto from "../views/page/mainPage";
 
 const routes = {
   "/detail/:id": Detail,
+  "/home": Resto,
   "/": Resto,
   "/favourite": Like,
 };
