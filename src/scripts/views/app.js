@@ -16,7 +16,7 @@ class App {
     console.log(skipLinkElem);
     skipLinkElem.addEventListener("click", (event) => {
       event.preventDefault();
-      document.querySelector(".main").focus();
+      document.querySelector("#maincontent").focus();
     });
   }
 }

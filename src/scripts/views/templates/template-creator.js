@@ -4,32 +4,32 @@ const RestoDetailTemplate = (resto) => {
   return `
    <div>
     <img class="resto__poster" src="${CONFIG.BASE_URL}images/medium/${resto.pictureId}" alt="${resto.name}" />
-    <h1 class="resto__title">${resto.name}</h1>
+    <h1 class="resto__title" tabindex="1">${resto.name}</h1>
     <div class="resto__info2">
       <div class="resto__address">
         <div>
           <h4>Alamat</h4>
-          <p>${resto.address}</p>
+          <p tabindex="2">${resto.address}</p>
         </div>
         <div>
           <h4>Kota</h4>
-          <p>${resto.city}</p>
+          <p tabindex="3">${resto.city}</p>
         </div>
       </div>
-      <p class="resto__description">${resto.description} minutes</p>
+      <p class="resto__description" tabindex="4">${resto.description} minutes</p>
     </div>
     <div class="resto__info">
 
-      <div class="food__menu">
+      <div class="food__menu" tabindex="5">
         <h3>Makanan</h3>
       </div>
 
-      <div class="drink__menu">
+      <div class="drink__menu" tabindex="6">
         <h3>Minuman</h3>
       </div>
       
     </div>
-    <div class="customer__review">
+    <div class="customer__review" tabindex="7">
       <h2>Ulasan</h2>
       <form id="reviewForm" method="POST" class="formbold-chatbox-form">
         <input type="hidden" name="id" value="${resto.id}">
@@ -67,9 +67,10 @@ const RestoDetailTemplate = (resto) => {
 `;
 };
 
-const RestoTemplate = (resto) => {
+const RestoTemplate = (resto, tabindex = 1) => {
+  if (tabindex == 0) tabindex = 1;
   return `  
-    <div class="card" onclick="location.href='#/detail/${resto.id}';">
+    <div class="card" onclick="location.href='#/detail/${resto.id}';" tabindex="${tabindex}">
         <div class="head-card">
         <p class="body-city">
         ${resto.city}

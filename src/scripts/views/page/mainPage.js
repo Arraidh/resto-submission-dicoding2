@@ -18,7 +18,7 @@ const Resto = {
     const Restos = await restoDBSource.listRestourant();
     const restoContainer = document.querySelector("#card-wrapper");
     for (let resto in Restos) {
-      restoContainer.innerHTML += RestoTemplate(Restos[resto]);
+      restoContainer.innerHTML += RestoTemplate(Restos[resto], resto);
     }
   },
 };
