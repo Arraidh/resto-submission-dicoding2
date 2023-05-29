@@ -11,11 +11,17 @@ class MyFooter extends HTMLElement {
           position: relative;
           bottom: 0;
           text-align: center;
-          width: 100%;
           font-family: Poppins, sans-serif;
           color: #fff;
           display: block;
           background-color: #14213d;
+        }
+
+        @media screen and (max-width: 400px) {
+          :host {
+            padding: 1rem;
+            font-size: 10px;
+          }
         }
 
         footer {

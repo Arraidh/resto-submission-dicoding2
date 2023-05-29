@@ -3,33 +3,33 @@ import CONFIG from "../../globals/config";
 const RestoDetailTemplate = (resto) => {
   return `
    <div>
-    <img class="resto__poster" src="${CONFIG.BASE_URL}images/medium/${resto.pictureId}" alt="${resto.name}" />
-    <h1 class="resto__title" tabindex="1">${resto.name}</h1>
+      <img class="resto__poster" src="${CONFIG.BASE_URL}images/medium/${resto.pictureId}" alt="${resto.name}" />
+    <h1 class="resto__title">${resto.name}</h1>
     <div class="resto__info2">
       <div class="resto__address">
         <div>
           <h4>Alamat</h4>
-          <p tabindex="2">${resto.address}</p>
+          <p>${resto.address}</p>
         </div>
         <div>
           <h4>Kota</h4>
-          <p tabindex="3">${resto.city}</p>
+          <p>${resto.city}</p>
         </div>
       </div>
-      <p class="resto__description" tabindex="4">${resto.description} minutes</p>
+      <p class="resto__description">${resto.description} minutes</p>
     </div>
     <div class="resto__info">
 
-      <div class="food__menu" tabindex="5">
+      <div class="food__menu">
         <h3>Makanan</h3>
       </div>
 
-      <div class="drink__menu" tabindex="6">
+      <div class="drink__menu">
         <h3>Minuman</h3>
       </div>
       
     </div>
-    <div class="customer__review" tabindex="7">
+    <div class="customer__review">
       <h2>Ulasan</h2>
       <form id="reviewForm" method="POST" class="formbold-chatbox-form">
         <input type="hidden" name="id" value="${resto.id}">
@@ -67,29 +67,19 @@ const RestoDetailTemplate = (resto) => {
 `;
 };
 
-const RestoTemplate = (resto, tabindex = 1) => {
-  if (tabindex == 0) tabindex = 1;
+const RestoTemplate = (resto) => {
   return `  
-    <div class="card" onclick="location.href='#/detail/${resto.id}';" tabindex="${tabindex}">
-        <div class="head-card">
-        <p class="body-city">
-        ${resto.city}
-        </p>
-        <img src="${CONFIG.BASE_URL}images/medium/${resto.pictureId}" alt="${resto.name}" />
-        <div class="body-rating">
-            <img src="./images/Rating.png" alt="Rating" />
-            <p>
-            ${resto.rating}
-            </p>
-        </div>
-        </div>
-        <div class="body-card">
-        <h1>${resto.name}</h1>
-        <p>
-            ${resto.description}
-        </p>
-        </div>
-    </div>`;
+
+  <div class="card" onclick="location.href='#/detail/${resto.id}';" tabindex="0">
+  <img src="${CONFIG.BASE_URL}images/medium/${resto.pictureId}" alt="${resto.name}" class="card-image">
+  <div class="card-content">
+    <h2 class="card-title">${resto.name}</h2>
+    <div class="card-rating">Rating: ${resto.rating}</div>
+    <p class="card-city">${resto.city}</p> 
+    <p class="card-description"> ${resto.description}</p>
+  </div>
+</div>
+`;
 };
 
 const createLikeButtonTemplate = () => `
