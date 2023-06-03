@@ -1,7 +1,7 @@
 const assert = require("assert");
 Feature("Liking Restos");
 
-Scenario("Liking one resto", async ({ I }) => {
+Scenario("Liking and Unlike resto", async ({ I }) => {
   I.amOnPage("/");
 
   await I.waitForVisible(".card");
