@@ -1,7 +1,7 @@
 import restoDBSource from "../../data/restodb-source";
 import UrlParser from "../../routes/url-parser";
 import { RestoDetailTemplate } from "../templates/template-creator";
-import LikeButtonInitiator from "../../utils/like-button-initiator";
+import LikeButtonPresenter from "../../utils/like-button-presenter";
 import CONFIG from "../../globals/config";
 
 const Detail = {
@@ -42,7 +42,7 @@ const Detail = {
     iterateMenu(resto.restaurant.menus.foods, ".food__menu");
     iterateMenu(resto.restaurant.menus.drinks, ".drink__menu");
 
-    LikeButtonInitiator.init({
+    LikeButtonPresenter.init({
       likeButtonContainer: document.querySelector("#likeButtonContainer"),
       resto: {
         id: resto.restaurant.id,
