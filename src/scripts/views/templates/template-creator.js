@@ -1,4 +1,6 @@
 import CONFIG from "../../globals/config";
+import "lazysizes";
+import "lazysizes/plugins/parent-fit/ls.parent-fit";
 
 const RestoDetailTemplate = (resto) => {
   return `
@@ -71,7 +73,7 @@ const RestoTemplate = (resto) => {
   return `  
 
   <div class="card" onclick="location.href='#/detail/${resto.id}';" tabindex="0">
-  <img src="${CONFIG.BASE_URL}images/medium/${resto.pictureId}" alt="${resto.name}" class="card-image">
+  <img class="card-image lazyload" data-src="${CONFIG.BASE_URL}images/medium/${resto.pictureId}" alt="${resto.name}" >
   <div class="card-content">
     <h2 class="card-title">${resto.name}</h2>
     <div class="card-rating">Rating: ${resto.rating}</div>

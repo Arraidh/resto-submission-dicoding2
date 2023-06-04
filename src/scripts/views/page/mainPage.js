@@ -4,12 +4,13 @@ import { RestoTemplate } from "../templates/template-creator";
 const Resto = {
   async render() {
     return `
-        <div class="hero-container">
+    <picture class="hero-container">
+      <source media="(max-width: 600px)" srcset="./images/heros/hero-image_2-small.jpg" >
         <img
-          src="./images/heros/hero-image_2.jpg"
+          src="./images/heros/hero-image_2-large.jpg"
           alt="Welcome to Warung Kita Picture"
         />
-      </div>
+        </picture>
       <div class="card-wrapper main" id="card-wrapper"></div>
         `;
   },
